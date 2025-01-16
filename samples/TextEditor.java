@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class TextEditor {
     static Stack<String> undo = new Stack<>();
+    static Stack<String> redo = new Stack<>();
 
     public static void main(String[] args) {
         //void appendEnd(String)  // hello world
@@ -11,7 +12,17 @@ public class TextEditor {
         //System.out.println(undo.peek());
         appendEnd("World");
        // System.out.println(undo.peek());
+        appendEnd("Rajeeb");
         read();
+        undoText();
+        read();
+        undoText();
+        read();
+        redoText();
+        read();
+        redoText();
+        read();
+
 
 
     }
@@ -39,10 +50,24 @@ public class TextEditor {
             revOrder.pop();
         }
 
-        if(revOrder.isEmpty()) {
+       /* if(revOrder.isEmpty()) {
             System.out.println("\nAll elements have been moved back to undo stack");
-        }
+        }*/
 
-        System.out.println("Elements present in Undo stack is : " + undo.size());
+        //System.out.println("Elements present in Undo stack is : " + undo.size());
     }
+
+    private static void undoText() {
+        System.out.println("\nUndoing word:" +"'"+ undo.peek() +"'" + "by removing object from Editor" );
+        redo.push(undo.peek());
+        undo.pop();
+    }
+
+    private static void redoText() {
+        System.out.println("\nRedoing the text:" + "'" + redo.peek() + "'");
+        undo.push(redo.peek());
+        redo.pop();
+    }
+
+
 }
