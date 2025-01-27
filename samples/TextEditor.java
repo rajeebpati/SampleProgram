@@ -32,7 +32,7 @@ public class TextEditor {
     }
 
     private static void read() {
-        String text= "";
+        //String text= "";
         Stack<String> revOrder = new Stack<>();
         while (!undo.empty()) {
             revOrder.push(undo.peek());
