@@ -14,28 +14,28 @@ public class Floor {
     }
 
 
-    public void addVehicle( String floorNumber,String number) {
-        //long count = parkingSlot.size();
-        if(floorparking.isEmpty()) {
-            floorparking.get.add(number);
-            floorparking.put(floorNumber, parkingSlot);
-        }
-
-        for(Map.Entry<String, List<String>> entry:floorparking.entrySet()) {
-            int size = entry.getValue().size();
-            if(size==10) {
-                System.out.println("Parking is full");
-            } else {
-                entry.getValue().add(number);
-                floorparking.put(entry.getKey(), entry.getValue());
-                System.out.println("Parking is alloted");
-            }
-        }
-    }
-
-    public Integer getParkingSlotSize() {
-        return parkingSlot.size();
-    }
+//    public void addVehicle( String floorNumber,String number) {
+//        //long count = parkingSlot.size();
+//        if(floorparking.isEmpty()) {
+//            floorparking.get.add(number);
+//            floorparking.put(floorNumber, parkingSlot);
+//        }
+//
+//        for(Map.Entry<String, List<String>> entry:floorparking.entrySet()) {
+//            int size = entry.getValue().size();
+//            if(size==10) {
+//                System.out.println("Parking is full");
+//            } else {
+//                entry.getValue().add(number);
+//                floorparking.put(entry.getKey(), entry.getValue());
+//                System.out.println("Parking is alloted");
+//            }
+//        }
+//    }
+//
+//    public Integer getParkingSlotSize() {
+//        return parkingSlot.size();
+//    }
 
 
 

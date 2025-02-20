@@ -1,9 +1,7 @@
-package test;
+package samples;
 
-import java.util.Arrays;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class TestingString {
     //String Str = "Rajeeb"
@@ -15,8 +13,8 @@ public class TestingString {
         String str = "Rajeeb";
 
         char[] charArray = str.toCharArray();
-        Stream.of(charArray).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).forEach((k,v)->System.out.println(k + ", " + v));
-       // str.chars().mapToObj(c->(char)c)
+        //Stream.of(charArray).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().forEach(entry-> System.out.println(entry.getKey() + " : " + entry.getValue()));
+         str.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).forEach((k,v)-> System.out.println(k + " : " + v));
        // Arrays.stream(charArray).Collect(groupingBy(FunctioanlIdentity(), Counting)).entrySet().stream().foreach((entry) -> System.out.print(entry.getKey() + " " + entry.getValue));
     }
 }
